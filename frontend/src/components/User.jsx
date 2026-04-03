@@ -15,26 +15,30 @@ const User = () => {
         declined: 0
     });
 
-   useEffect(() => {
-    const fetchStats = async () => {
-        try {
-            const response = await api.get("/auth/users");
-            setStats(response.data.stats);
+    useEffect(() => {
+        const fetchStats = async () => {
+            try {
+                const token = localStorage.getItem("token");
 
-        } catch (error) {
-            if (error.response?.status === 401 || error.response?.status === 403) {
-                console.log("Session expired");
+                const res = await axios.get(`${API_URL}/auth/users`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
 
-                localStorage.removeItem("token"); // clear bad token
-               // window.location.href = "/";  // redirect
-            } else {
-                console.error('Error fetching user stats:', error);
+                console.log(res.data);
+
+            } catch (err) {
+                console.error(err);
+
+                if (err.response?.status === 401) {
+                    console.log("Session expired");
+                }
             }
-        }
-    };
+        };
 
-    fetchStats();
-}, []);
+        fetchStats();
+    }, []);
 
     return (
         <div className="user-dashboard">
