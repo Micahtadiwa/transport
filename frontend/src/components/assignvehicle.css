@@ -1,0 +1,99 @@
+/* Page background (optional) */
+body {
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.assign-container {
+  max-width: 520px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.assign-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Form layout */
+.assign-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs, select, textarea */
+.assign-form input,
+.assign-form select,
+.assign-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  background-color: #fafafa;
+}
+
+/* Focus effect */
+.assign-form input:focus,
+.assign-form select:focus,
+.assign-form textarea:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* Readonly input */
+.assign-form input[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Textarea */
+.assign-form textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+/* Button */
+.assign-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.assign-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Active click */
+.assign-form button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .assign-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .assign-container h1 {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,319 @@
+/* Main Dashboard Layout */
+.user-dashboard {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 2fr 3fr;
+    padding: 20px;
+    background-color: #f4f6f9;
+    gap: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Prevent double scrollbars */
+}
+
+/* Titles */
+.dashboard-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.dashboard-subtitle {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.title-section {
+    background: white;
+    padding: 20px;
+   
+    min-height: 0;
+}
+
+/* ========================= */
+/* 🔝 TOP SECTION (1fr) */
+/* ========================= */
+
+.top-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start;
+    /* 🔥 Start at top */
+    overflow-y:hidden;
+   
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    width: 100%;
+
+}
+
+/* Stat Cards */
+.stat-card {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Add shadow on hover */
+}
+
+.stat-card h3 {
+    font-size: 10px;
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+.stat-number {
+    font-size: 15px;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.stat-label {
+    font-size: 10px;
+    color: #64748b;
+}
+
+/* Status Colors */
+.stat-card.active {
+    background: #e6f9f0;
+}
+
+.stat-card.inactive {
+    background: #fff4e6;
+}
+
+.stat-card.pending {
+    background: #fff7e6;
+}
+
+.stat-card.declined {
+    background: #ffe6e6;
+}
+
+/* ========================= */
+/* 🔽 BOTTOM SECTION (4fr) */
+/* ========================= */
+
+.bottom-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    /* Allow scrolling if content overflows */
+    min-height: 0;
+    /* Important for flex children in grid */
+
+}
+
+.section-title {
+    margin: 0 0 20px 0;
+    /* Fixed margin */
+    font-size: 20px;
+    color: #1e293b;
+}
+
+/* Buttons Grid */
+.buttons-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    min-height: 0;
+    /* Important for grid children */
+}
+
+/* Action Cards */
+.action-card {
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: 0.3s ease;
+    font-size: 16px;
+    width: 100%;
+    /* Ensure full width */
+    box-sizing: border-box;
+    /* Include padding in width */
+}
+
+.action-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    /* Add shadow on hover */
+}
+
+/* Button Variants */
+.btn-users {
+    background: #e0f2fe;
+}
+
+.btn-roles {
+    background: #ede9fe;
+}
+
+.btn-chart {
+    background: #dcfce7;
+}
+
+.btn-declined {
+    background: #fee2e2;
+}
+
+.action-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.action-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.action-desc {
+    font-size: 13px;
+    color: #475569;
+}
+
+/* =============================== */
+/* 📱 MOBILE VIEW (768px and below) */
+/* =============================== */
+
+@media (max-width: 768px) {
+
+  /* Main layout becomes vertical */
+  .user-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 15px;
+    gap: 15px;
+    overflow-y: auto;
+  }
+
+  /* Titles */
+  .dashboard-title {
+    font-size: 22px;
+  }
+
+  .dashboard-subtitle {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  /* ===================== */
+  /* 🔝 TOP SECTION */
+  /* ===================== */
+
+  .top-section {
+    padding: 15px;
+    overflow: visible;
+  }
+
+  /* Stats stack vertically */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 🔥 One column */
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  /* ===================== */
+  /* 🔽 BOTTOM SECTION */
+  /* ===================== */
+
+  .bottom-section {
+    padding: 15px;
+    overflow: visible;
+  }
+
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  /* Buttons full width */
+  .buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 🔥 Stack buttons */
+    gap: 15px;
+  }
+
+  .action-card {
+    padding: 18px;
+    width: 100%;
+  }
+
+  .action-icon {
+    font-size: 24px;
+  }
+
+  .action-title {
+    font-size: 15px;
+  }
+
+  .action-desc {
+    font-size: 12px;
+  }
+}
+
+
+/* =============================== */
+/* 📱 EXTRA SMALL DEVICES (480px) */
+/* =============================== */
+
+@media (max-width: 480px) {
+
+  .user-dashboard {
+    padding: 10px;
+  }
+
+  .dashboard-title {
+    font-size: 20px;
+  }
+
+  .top-section,
+  .bottom-section {
+    padding: 12px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .action-card {
+    padding: 15px;
+  }
+}   

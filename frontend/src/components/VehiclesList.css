@@ -1,0 +1,165 @@
+/* PAGE CONTAINER */
+
+.vehicles-container{
+    padding:20px;
+    background:#f4f6f9;
+    min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TITLE */
+
+.vehicles-title{
+    font-size:26px;
+    font-weight:600;
+    margin-bottom:20px;
+    color:#333;
+}
+
+/* TABLE WRAPPER */
+
+.vehicles-table-wrapper{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    overflow-x:auto;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* TABLE */
+
+.vehicles-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+/* HEADER */
+
+.vehicles-table thead{
+    background:#2c3e50;
+    color:#fff;
+}
+
+.vehicles-table th{
+    padding:14px;
+    text-align:left;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* BODY */
+
+.vehicles-table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+/* HOVER */
+
+.vehicles-table tbody tr:hover{
+    background:#f2f4ff;
+}
+
+/* BUTTONS */
+
+.btns{
+   padding: 5px 10px;
+   margin:0px 2px;
+   color: white;
+   border-radius: 10px;
+}
+
+/* GENERAL BUTTON STYLE */
+
+
+/* EDIT BUTTON */
+
+.edit-btn{
+     background:#3498db;
+    color:white;
+}
+
+.edit-btn:hover{
+    background:#2980b9;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn{
+    background:#e74c3c;
+    color:white;
+}
+
+.delete-btn:hover{
+    background:#c0392b;
+}
+
+
+th {
+  cursor: pointer;
+  user-select: none;
+}
+
+th:hover {
+  background: #34495e;
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width:768px){
+
+    .vehicles-title{
+        font-size:22px;
+    }
+
+    .vehicles-table thead{
+        display:none;
+    }
+
+    .vehicles-table,
+    .vehicles-table tbody,
+    .vehicles-table tr,
+    .vehicles-table td{
+        display:block;
+        width:100%;
+    }
+
+    .vehicles-table tr{
+        background:white;
+        margin-bottom:15px;
+        border-radius:10px;
+        padding:10px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .vehicles-table td{
+        text-align:right;
+        padding-left:50%;
+        position:relative;
+        border-bottom:none;
+        padding-top:10px;
+        padding-bottom:10px;
+        font-size:14px;
+    }
+
+    .vehicles-table td::before{
+        content:attr(data-label);
+        position:absolute;
+        left:10px;
+        width:45%;
+        font-weight:600;
+        text-align:left;
+        color:#333;
+    }
+     .btns{
+        justify-content:flex-start;
+        flex-wrap:wrap;
+        gap:6px;
+    }
+
+    
+
+}

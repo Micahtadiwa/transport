@@ -1,0 +1,128 @@
+/* Base Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar-wrapper {
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Desktop Sidebar */
+.sidebar-wrapper:not(.mobile) {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/* Mobile Sidebar */
+.sidebar-wrapper.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  transform: translateX(-100%);
+  z-index: 1001;
+}
+
+.sidebar-wrapper.mobile.open {
+  transform: translateX(0);
+}
+
+/* Main Content */
+.main-content {
+  flex: 3;
+  padding: 0;
+  transition: margin-left 0.3s ease-in-out;
+  height: 100vh;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 999;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Sidebar Overlay for Mobile */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-content {
+    flex: 1;
+    margin: 0;
+    width: 100%;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  /* Adjust main content when sidebar is open on mobile */
+  .main-content.sidebar-open {
+    filter: blur(2px);
+    pointer-events: none;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar-wrapper:not(.mobile) {
+    min-width: 200px;
+    max-width: 250px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+}
+
+/* Animation for smooth transitions */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

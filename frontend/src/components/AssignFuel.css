@@ -1,0 +1,151 @@
+/* Container */
+.fuel-container {
+  padding: 20px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.fuel-header {
+  margin-bottom: 20px;
+}
+
+.fuel-header h1 {
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.fuel-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Table Wrapper (IMPORTANT for mobile) */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+/* Table */
+.fuel-table {
+  width: 100%;
+  min-width: 900px; /* keeps table structure on mobile */
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+.fuel-table thead {
+  background-color: #111827;
+  color: white;
+}
+
+.fuel-table th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* Body */
+.fuel-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Hover effect */
+.fuel-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: 0.2s ease;
+}
+
+/* Buttons */
+.fuel-table button {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* View Button */
+.fuel-table button:first-child {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.fuel-table button:first-child:hover {
+  background-color: #2563eb;
+}
+
+/* Unassign Button */
+.fuel-table button:last-child {
+  background-color: #ef4444;
+  color: white;
+}
+
+.fuel-table button:last-child:hover {
+  background-color: #dc2626;
+}
+
+/* Status Styling */
+.status {
+  font-weight: bold;
+}
+
+.status.assigned {
+  color: green;
+}
+
+.status.pending {
+  color: orange;
+}
+
+/* Empty state */
+.fuel-table td[colspan] {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+}
+
+/* Scrollbar (optional polish) */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 768px) {
+  .fuel-container {
+    padding: 10px;
+  }
+
+  .fuel-header h1 {
+    font-size: 20px;
+  }
+
+  .fuel-header p {
+    font-size: 12px;
+  }
+
+  .fuel-table th,
+  .fuel-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+}

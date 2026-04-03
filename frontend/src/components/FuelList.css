@@ -1,0 +1,24 @@
+/* Wrapper for horizontal scroll */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Keep table layout intact */
+.fuel-table {
+  min-width: 900px; /* ensures table doesn't shrink too much */
+}
+
+/* Smooth scrolling (optional) */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
